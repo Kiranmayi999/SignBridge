@@ -1,135 +1,71 @@
-# SignBridge: Interactive Indian Sign Language (ISL) Platform
+# SignBridge
 
-SignBridge is a full-stack Indian Sign Language (ISL) learning and communication platform designed to improve accessibility between the deaf and hearing communities. By combining computer vision, deep learning, multilingual translation, and modern web technologies, the platform enables users to learn ISL, recognize hand gestures in real time, translate text into sign language, and communicate through accessible digital tools.
+SignBridge is a full-stack Indian Sign Language (ISL) learning and communication platform designed to bridge the communication gap between the deaf and hearing communities. The platform combines computer vision, deep learning, and multilingual translation to enable real-time ISL alphabet recognition, Text-to-Sign translation, speech synthesis, and interactive learning through a modern web interface.
 
----
+## Features
 
-## 🚀 Key Features
+- **Real-Time ISL Alphabet Recognition:** Recognize ISL alphabet gestures using a webcam and convert sequential gestures into text.
+- **Text-to-Sign Translation:** Convert text into corresponding ISL sign videos for visual communication.
+- **Text-to-Speech:** Convert translated or recognized text into spoken audio for enhanced accessibility.
+- **ISL Learning Cards:** Learn ISL through interactive learning cards and categorized educational content.
+- **Multilingual Dictionary:** Search words across multiple languages and explore their corresponding ISL signs.
+- **Media-Based Learning:** Improve understanding using sign videos and visual learning resources.
 
-### 🔤 Real-Time ISL Alphabet Recognition
-Detects ISL alphabet gestures using computer vision and deep learning models, enabling sequential gesture recognition to generate text in real time.
+## Workflow
 
-### ✍️ Text-to-Sign Translation
-Converts user-entered text into corresponding ISL sign videos, providing an intuitive visual representation for communication and learning.
+- Users can learn ISL, translate text, or perform real-time gesture recognition.
+- Webcam frames are processed by the Python backend using TensorFlow and OpenCV for ISL alphabet recognition.
+- Text translation requests are handled by the Node.js backend, which retrieves the corresponding sign videos and translations.
+- The system displays translated text, sign videos, or synthesized speech based on the selected module.
 
-### 🔊 Text-to-Speech
-Converts translated or recognized text into spoken audio, improving accessibility and enhancing user interaction.
+## Tech Stack
 
-### 📚 Interactive ISL Learning Cards
-Provides media-rich learning cards with visual demonstrations to help users learn ISL alphabets, words, and commonly used signs.
-
-### 📖 Multilingual ISL Dictionary
-Offers a searchable multilingual dictionary that links words and phrases to their corresponding ISL signs and video assets.
-
-### 🎥 Media-Based Learning
-Utilizes sign videos and educational media to provide an engaging visual learning experience for beginners and learners.
-
-### 💻 Modern Web Interface
-Built as a responsive Single Page Application (SPA) using React.js for seamless navigation across learning, translation, and communication modules.
-
----
-
-# 💻 Tech Stack
-
-## Frontend
+### Frontend
 - React.js
-- React Router
 - Material UI
-- Axios
+- React Router
 - React Webcam
+- Axios
 
-## Backend
+### Backend
 - Node.js
 - Express.js
 - Flask
-- REST APIs
 
-## AI & Computer Vision
+### AI & Computer Vision
 - Python
 - TensorFlow
 - Keras
 - OpenCV
 - CVZone
-- NumPy
 
-## APIs & NLP
-- Google Translate API
-- Google Text-to-Speech API
-- NLTK
-
-## Data & Assets
-- JSON-based multilingual dictionary
-- ISL video assets
-- Trained deep learning models
-
----
-
-# 🏗️ System Architecture
-
-```text
-                 React Frontend
-                       │
-        ┌──────────────┴──────────────┐
-        │                             │
- Node.js Backend               Flask ML Service
-        │                             │
- Google APIs              TensorFlow + OpenCV
-        │                             │
- Translation & TTS     ISL Gesture Recognition
-```
-
----
-
-# 📂 Repository Structure
+## Project Structure
 
 ```text
 SignBridge/
 ├── Cards/
-│   ├── backend/          # Node.js backend
-│   ├── public/           # ISL videos, dictionary data, static assets
-│   └── src/              # React components and pages
+│   ├── backend/
+│   ├── public/
+│   └── src/
 │
 ├── StoT/
 │   └── backend/
-│       ├── models/       # TensorFlow models
-│       └── python/       # Gesture recognition scripts
+│       ├── models/
+│       └── python/
 │
 └── README.md
 ```
 
----
-
-# ⚙️ System Workflow
-
-1. **Input Capture** – Users interact with the application through text input or a live webcam feed.
-
-2. **Request Processing** – The React frontend routes requests to the appropriate backend service:
-   - **Node.js** for translation and speech services.
-   - **Flask** for gesture recognition and AI inference.
-
-3. **AI Processing** – TensorFlow and OpenCV perform real-time ISL alphabet recognition, while backend services retrieve sign videos, translations, or speech output.
-
-4. **Output Generation** – The application dynamically displays translated text, ISL sign videos, or synthesized speech, providing an interactive communication and learning experience.
-
----
-
-# 🛠️ Installation
-
-## Prerequisites
-
-- Node.js
-- npm
-- Python 3.x
-- Git
+## Installation
 
 ### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/SignBridge.git
+git clone https://github.com/<your-username>/SignBridge.git
 cd SignBridge
 ```
 
-### Install Frontend
+### Frontend
 
 ```bash
 cd Cards
@@ -137,36 +73,27 @@ npm install
 npm start
 ```
 
-### Install Node.js Backend
+### Node.js Backend
 
 ```bash
-cd backend
+cd Cards/backend
 npm install
 node server.js
 ```
 
-### Install Python Backend
+### Python Backend
 
 ```bash
-cd ../../StoT/backend/python
+cd StoT/backend/python
 pip install -r requirements.txt
 python app.py
 ```
 
----
+## Note
 
-# ⚠️ Large Assets
+Large assets such as trained TensorFlow models, ISL video datasets, and media files are excluded from version control using `.gitignore`.
 
-Large binary assets are excluded from version control using `.gitignore`.
-
-Required assets include:
-
-- ISL video dataset
-- Trained TensorFlow models
-- Training media
-- Dictionary assets
-
-Place them inside:
+To run the project locally, place the required assets in:
 
 ```text
 Cards/public/isl_videos/
@@ -174,14 +101,6 @@ Cards/public/train1/
 StoT/backend/models/
 ```
 
----
+## License
 
-# 🎯 Applications
-
-- Indian Sign Language Learning
-- Accessibility Assistance
-- Inclusive Education
-- Communication Support
-- Assistive Technology
-
----
+MIT License
