@@ -2,6 +2,10 @@
 
 SignBridge is a full-stack Indian Sign Language (ISL) learning and communication platform designed to bridge the communication gap between the deaf and hearing communities. The platform combines computer vision, deep learning, and multilingual translation to enable real-time ISL alphabet recognition, Text-to-Sign translation, speech synthesis, and interactive learning through a modern web interface.
 
+## Demo
+
+[Watch SignBridge Demo](https://drive.google.com/file/d/1hEuxSSMi9xctnSWjbve2fj0uSb9LbJfZ/view?usp=sharing)
+
 ## Features
 
 - **Real-Time ISL Alphabet Recognition:** Recognize ISL alphabet gestures using a webcam and convert sequential gestures into text.
